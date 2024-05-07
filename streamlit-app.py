@@ -12,7 +12,7 @@ import urllib.parse
 from urllib.parse import urlparse
 
 # Set the page configuration at the very start
-st.set_page_config(page_title="Game Schedule Viewer", layout="wide")
+st.set_page_config(page_title="NCCSF QR Check-in", layout="wide")
 
 def is_url(url):
     try:
