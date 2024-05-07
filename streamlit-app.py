@@ -28,7 +28,7 @@ cookie_manager = get_manager()
 
 spreadsheet_filename = "NCCSF QR Check-in"
 page_title = spreadsheet_filename
-page_url = "http://192.168.1.8:8501"
+page_url = "http://player-qr-checkin-nccsf.streamlit.app"
 
 # Google Sheets setup
 @st.cache_resource
@@ -38,7 +38,8 @@ def init_connection():
              "https://www.googleapis.com/auth/drive.file",
              "https://www.googleapis.com/auth/drive"]
     # Create a connection object.
-    creds = service_account.Credentials.from_service_account_info(
+    # creds = service_account.Credentials.from_service_account_info(
+    creds = ServiceAccountCredentials.from_service_account_info(
         st.secrets["gcp_service_account"],
         scope,
     )
