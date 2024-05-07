@@ -178,8 +178,8 @@ else:
         # Get the URL input from the user
         checkin_url = f"{page_url}?checkin&teamname={urllib.parse.quote(selected_sheet)}&playerid={selected_row['Player']}"
 
-        # url = st.text_input("Enter the URL to generate a QR code:", value=checkin_url)
-        url = checkin_url
+        url = st.text_input("Enter the URL to generate a QR code:", value=checkin_url)
+        # url = checkin_url
 
         # Allow the user to choose a color pair
         # color_pair = st.selectbox("Select a color pair:", list(color_pairs.keys()))
