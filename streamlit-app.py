@@ -1,7 +1,8 @@
 import streamlit as st
 import extra_streamlit_components as stx
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+# from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2 import service_account
 import pandas as pd
 from datetime import datetime, timedelta
 import qrcode
@@ -38,8 +39,7 @@ def init_connection():
              "https://www.googleapis.com/auth/drive.file",
              "https://www.googleapis.com/auth/drive"]
     # Create a connection object.
-    # creds = service_account.Credentials.from_service_account_info(
-    creds = ServiceAccountCredentials.from_service_account_info(
+    creds = service_account.Credentials.from_service_account_info(
         st.secrets["gcp_service_account"],
         scope,
     )
