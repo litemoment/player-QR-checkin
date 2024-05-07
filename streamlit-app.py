@@ -34,10 +34,6 @@ page_url = "http://player-qr-checkin-nccsf.streamlit.app"
 # Google Sheets setup
 @st.cache_resource
 def init_connection():
-    scope = ["https://spreadsheets.google.com/feeds",
-             "https://www.googleapis.com/auth/spreadsheets",
-             "https://www.googleapis.com/auth/drive.file",
-             "https://www.googleapis.com/auth/drive"]
     # Create a connection object.
     creds = service_account.Credentials.from_service_account_info(
         st.secrets["gcp_service_account"],
