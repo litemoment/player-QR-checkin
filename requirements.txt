@@ -1,0 +1,8 @@
+google-auth
+gspread
+oauth2client
+pandas
+streamlit-authenticator
+extra-streamlit-components
+qrcode
+Pillow
