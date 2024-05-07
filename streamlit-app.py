@@ -201,6 +201,7 @@ else:
                     # st.write("Player's photo not found")
                     # Check if the input looks like a URL
                     if is_url(selected_row['Photo URL']):
+                        st.write(selected_row['Photo URL'])
                         st.image(selected_row['Photo URL'], caption="Player Photo", use_column_width=True)
                     else:
                         st.write("Player's photo not found")
