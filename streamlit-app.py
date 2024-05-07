@@ -1,3 +1,8 @@
+# ***********************************************************
+# * Copyright (c) 2024 litemoment.com. All rights reserved. *
+# ***********************************************************
+# Contact: webmaster@litemoment.com
+
 import streamlit as st
 import extra_streamlit_components as stx
 import gspread
