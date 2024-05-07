@@ -174,8 +174,8 @@ else:
         # Get the URL input from the user
         checkin_url = f"{page_url}?checkin&teamname={urllib.parse.quote(selected_sheet)}&playerid={selected_row['Player']}"
 
-        url = st.text_input("Enter the URL to generate a QR code:", value=checkin_url)
-        # url = checkin_url
+        # url = st.text_input("Enter the URL to generate a QR code:", value=checkin_url)
+        url = checkin_url
 
         # Allow the user to choose a color pair
         # color_pair = st.selectbox("Select a color pair:", list(color_pairs.keys()))
@@ -186,8 +186,6 @@ else:
                 fill_color, bg_color = color_pairs["Black on White"]
                 qr_img = generate_qr_code(url, fill_color, bg_color)
             
-            
-        
                 # Save the PIL Image to a BytesIO buffer and convert it to bytes
                 img_buffer = io.BytesIO()
                 qr_img.save(img_buffer, format="PNG")
@@ -201,7 +199,6 @@ else:
                     # st.write("Player's photo not found")
                     # Check if the input looks like a URL
                     if is_url(selected_row['Photo URL']):
-                        st.write(selected_row['Photo URL'])
                         st.image(selected_row['Photo URL'], caption="Player Photo", use_column_width=True)
                     else:
                         st.write("Player's photo not found")
