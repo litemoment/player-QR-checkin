@@ -114,16 +114,16 @@ checkin = 'checkin' in params
 # Handle authentication
 if checkin:
     if not is_authenticated():
-        with st.sidebar:
-            st.info("Authentication Required for Check-in")
-            username = st.text_input("Username")
-            password = st.text_input("Password", type="password")
-            if st.button("Login"):
-                if verify_credentials(username, password):
-                    set_authenticated()
-                    st.success("Logged in successfully.")
-                else:
-                    st.error("Incorrect username or password.")
+        # with st.sidebar:
+        st.info("Authentication Required for Check-in")
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+        if st.button("Login"):
+            if verify_credentials(username, password):
+                set_authenticated()
+                st.success("Logged in successfully.")
+            else:
+                st.error("Incorrect username or password.")
     # is_authenticated
     else:
         client = init_connection()
@@ -152,7 +152,7 @@ else:
     st.title(page_title)
     client = init_connection()
     sheet_names = get_sheets(client)
-    selected_sheet = st.sidebar.selectbox("Select a team", sheet_names)
+    selected_sheet = st.selectbox("Select a team", sheet_names)
 
     data = get_data(client, selected_sheet)
     if not data.empty:
